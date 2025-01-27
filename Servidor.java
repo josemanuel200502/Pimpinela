@@ -1,7 +1,22 @@
 import java.io.*;
 import java.net.*;
 
+/**
+@author Jose Manuel Flores Marzo
+        * @version 1.0
+        */
 public class Servidor {
+
+    /**
+     * Método principal que ejecuta el servidor.
+     *
+     * Este método establece un servidor que escucha en el puerto 8000. Acepta
+     * una conexión del cliente, gestiona el intercambio de mensajes y responde
+     * de acuerdo con el flujo de diálogo predefinido. La conexión se cierra cuando
+     * el diálogo se completa o si ocurre un error.
+     *
+     * @param args Los argumentos de línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
         final int PUERTO = 8000;
 
@@ -19,6 +34,7 @@ public class Servidor {
                 int estado = 0;
                 String mensaje;
 
+                // Gestión del diálogo entre cliente y servidor
                 while ((mensaje = entrada.readLine()) != null) {
                     switch (estado) {
                         case 0: // Espera "¿Quién es?"
